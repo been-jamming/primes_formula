@@ -131,16 +131,7 @@ def set_variables():
 	start = ord("a")
 	for i in range(26):
 		char = chr(start + i)
-		abs_val = compute_index(i + 1, 27)
-		if i < 10: # if the character comes before k
-			j = i
-		else:
-			j = i - 1
-		if i != 10: # if the character is not 'k'
-			sign_val = compute_sign(j)
-			value = "{0}*({1})".format(sign_val, abs_val)
-		else:
-			value = "({0})".format(abs_val)
+		value = "({0})".format(compute_index(i, 26))
 		var_values[char] = value
 
 def get_primes_formula():
